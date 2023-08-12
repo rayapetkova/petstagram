@@ -5,7 +5,7 @@
 <head>
     <link rel="stylesheet"
           href={% static 'css/styles.css' %}>
-    <link rel="icon" type="image/x-icon" href="/static/images/free-30-instagram-stories-icons23_122570.png">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/free-30-instagram-stories-icons23_122570.png' %}">
     <title>Petstagram</title>
 </head>
 <!-- End Head Section -->
@@ -19,12 +19,12 @@
         <div class="container">
             <div class="logo">
                 <!-- Link to Home Page -->
-                <a href="#">
-                    <img width="50px" src="/staticfiles/images/free-30-instagram-stories-icons23_122570.png" alt="img1">
+                <a href="{% url 'home-page' %}">
+                    <img width="50px" src="{% static 'images/free-30-instagram-stories-icons23_122570.png' %}" alt="img1">
                 </a>
 
                 <!-- Link to Home Page -->
-                <a class="home" href="#">
+                <a class="home" href="{% url 'home-page' %}">
                     <i>Petstagram</i>
                 </a>
             </div>
@@ -34,35 +34,35 @@
                     <li class="nav-item">
 
                         <!-- Link to Add Pet Page -->
-                        <a href="#">
+                        <a href="{% url 'add-pet' %}">
                             <i>Add Pet</i>
                         </a>
                     </li>
                     <li class="nav-item">
 
                         <!-- Link to Add Photo Page -->
-                        <a href="#">
+                        <a href="{% url 'add-photo' %}">
                             <i>Add Photo</i>
                         </a>
                     </li>
                     <li class="nav-item">
 
                         <!-- Link to Login Page -->
-                        <a href="#">
+                        <a href="{% url 'login-user' %}">
                             <i>Login</i>
                         </a>
                     </li>
                     <li class="nav-item">
 
                         <!-- Link to Register Page -->
-                        <a href="">
+                        <a href="{% url 'register-user' %}">
                             <i>Register</i>
                         </a>
                     </li>
                     <li class="nav-item">
 
                         <!-- Link to Profile Page -->
-                        <a href="#">
+                        <a href="{% url 'profile-details' pk=1 %}">
                             <i>Profile</i>
                         </a>
                     </li>
@@ -82,7 +82,7 @@
             <form class="searchbar" method="post">
                 <input type="text" placeholder="Search by pet name...">
                 <button>
-                    <img src="/staticfiles/images/search.png" height="18" alt="img2">
+                    <img src="{% static 'images/search.png' %}" height="18" alt="img2">
                 </button>
             </form>
             <!-- End Searchbar Form -->
@@ -95,18 +95,18 @@
                 <div class="top">
                     <div class="userDetails">
                         <!-- Link to User Profile Page -->
-                        <a href="#">
+                        <a href="{% url 'profile-details' pk=1 %}">
                             <div class="profilepic">
                                 <div class="profile_img">
                                     <div class="image">
-                                        <img src="/staticfiles/images/person.png" alt="img8">
+                                        <img src="{% static 'images/person.png' %}" alt="img8">
                                     </div>
                                 </div>
                             </div>
                         </a>
                         <h3>
                             <!-- Link to User Profile Page -->
-                            <a href="#">
+                            <a href="{% url 'profile-details' pk=1 %}">
                                 <!-- if user has first name and last name -->
                                 Diyan Kalaydzhiev
                                 <!-- else -->
@@ -122,7 +122,7 @@
 
                 <!-- Start Pet Photo -->
                 <div class="imgBx" id="place the id of the photo here">
-                    <img src="/staticfiles/images/axolotl.jpeg" alt="post" class="cover">
+                    <img src="{% static 'images/axolotl.jpeg' %}" alt="post" class="cover">
                 </div>
                 <!-- End Pet Photo -->
 
@@ -201,7 +201,7 @@
 
                     <!-- Start Tagged Pets -->
                     <!-- Link to First Tagged Pet Details Page-->
-                    <a href="#">
+                    <a href="{% url 'pet-details-page' username='random' pet_name='sasho' %}">
                         <p class="message">
                             <b>Sasho</b>
                         </p>
@@ -216,7 +216,7 @@
                     <!-- End Tagged Pets -->
 
                     <!-- Link to Photo Details Page -->
-                    <a href="#">
+                    <a href="{% url 'pet-details-page' username='random' pet_name='sasho' %}">
                         <h4 class="details">See details</h4>
                     </a>
 
@@ -251,17 +251,17 @@
                 <div class="top">
                     <!-- User Details and image location -->
                     <div class="userDetails">
-                        <a href="profile details">
+                        <a href="{% url 'profile-details' pk=1 %}">
                             <div class="profilepic">
                                 <div class="profile_img">
                                     <div class="image">
-                                        <img src="/staticfiles/images/person.png" alt="img8">
+                                        <img src="{% static 'images/person.png' %}" alt="img8">
                                     </div>
                                 </div>
                             </div>
                         </a>
                         <h3>
-                            <a href="profile details">
+                            <a href="{% url 'profile-details' pk=1 %}">
                                 <!-- if user has first name and last name -->
                                 Antonia Hristova
                                 <!-- else -->
@@ -276,7 +276,7 @@
                 </div>
                 <!-- Post image -->
                 <div class="imgBx" id="place the id of the photo here">
-                    <img src="/staticfiles/images//dog-on-bed.jpg" alt="post" class="cover">
+                    <img src="{% static 'images//dog-on-bed.jpg' %}" alt="post" class="cover">
                 </div>
                 <!-- -->
 
@@ -349,7 +349,7 @@
                     </a>
 
                     <!-- tagged pets -->
-                    <a href="pet profile">
+                    <a href="{% url 'pet-details-page' username='random' pet_name='Bucky' %}">
                         <p class="message">
                             <b>Bucky</b>
                         </p>
@@ -386,17 +386,17 @@
                 <div class="top">
                     <!-- User Details and image location -->
                     <div class="userDetails">
-                        <a href="profile details">
+                        <a href="{% url 'profile-details' pk=2 %}">
                             <div class="profilepic">
                                 <div class="profile_img">
                                     <div class="image">
-                                        <img src="/staticfiles/images/person.png" alt="img8">
+                                        <img src="{% static 'images/person.png' %}" alt="img8">
                                     </div>
                                 </div>
                             </div>
                         </a>
                         <h3>
-                            <a href="profile details">
+                            <a href="{% url 'profile-details' pk=2 %}">
                                 <!-- if user has first name and last name -->
                                 Steven Ivanov
                                 <!-- else -->
@@ -411,7 +411,7 @@
                 </div>
                 <!-- Post image -->
                 <div class="imgBx" id="place the id of the photo here">
-                    <img src="/staticfiles/images/dog-on-road.jpg" alt="post" class="cover">
+                    <img src="{% static 'images/dog-on-road.jpg' %}" alt="post" class="cover">
                 </div>
                 <!-- -->
 
