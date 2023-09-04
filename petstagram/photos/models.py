@@ -3,16 +3,7 @@ from django.core.validators import MinLengthValidator
 from django.db import models
 
 from petstagram.pets.models import Pet
-
-
-def validate_files_size(fileobj):
-    filesize = fileobj.file.size
-    megabyte_limit = 5.0
-
-    if filesize > megabyte_limit * 1024 * 1024:
-        raise ValidationError(f"Max file size is {megabyte_limit}MB")
-
-
+from petstagram.photos.validators import validate_files_size
 class Photo(models.Model):
     photo = models.ImageField(
         null=False,
