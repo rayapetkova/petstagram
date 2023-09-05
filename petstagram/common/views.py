@@ -1,5 +1,13 @@
 from django.shortcuts import render
 
-# Create your views here.
+from petstagram.photos.models import Photo
+
+
 def home_page(request):
-    return render(request, f"common/home-page.html")
+    all_photos = Photo.objects.all()
+
+    context = {
+        'photos': all_photos
+    }
+
+    return render(request, f"common/home-page.html", context=context)
