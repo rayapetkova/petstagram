@@ -4,6 +4,8 @@ from django.db import models
 
 from petstagram.pets.models import Pet
 from petstagram.photos.validators import validate_files_size
+
+
 class Photo(models.Model):
     photo = models.ImageField(
         null=False,

@@ -5,8 +5,7 @@ from petstagram.photos.models import Photo
 
 @admin.register(Photo)
 class PhotosAdmin(admin.ModelAdmin):
-    pass
-    list_display = ('description', 'date_of_publication', 'location', 'all_tagged_pets')
+    list_display = ('id', 'description', 'date_of_publication', 'location', 'all_tagged_pets')
 
     def all_tagged_pets(self, current_photo_object):
         all_tagged_pets = current_photo_object.tagged_pets.all()
