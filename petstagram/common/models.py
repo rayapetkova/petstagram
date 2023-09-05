@@ -1,3 +1,13 @@
 from django.db import models
 
-# Create your models here.
+from petstagram.photos.models import Photo
+
+
+class Comment(models.Model):
+    comment_text = models.CharField(max_length=300)
+    date_and_time_of_publication = models.DateTimeField(auto_now_add=True)
+    relation_to_photo = models.ForeignKey(Photo, on_delete=models.CASCADE)
+
+
+class Like(models.Model):
+    relation_to_photo = models.ForeignKey(Photo, on_delete=models.CASCADE)
