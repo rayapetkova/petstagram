@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
+from petstagram.common.models import Like
 from petstagram.photos.models import Photo
 
 
@@ -18,3 +19,10 @@ def home_page(request):
     }
 
     return render(request, f"common/home-page.html", context=context)
+
+def like_photo_func(request, photo_id):
+    new_like = Like.objects.create(
+        relation_to_photo_id=photo_id
+    )
+
+    return redirect(request.META['HTTP_REFERER'] + f"#{photo_id}")
