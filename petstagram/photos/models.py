@@ -39,3 +39,9 @@ class Photo(models.Model):
         null=True,
         blank=True
     )
+
+    liked_by_user = models.BooleanField(
+        default=False,
+        null=False,
+        blank=True
+    )
