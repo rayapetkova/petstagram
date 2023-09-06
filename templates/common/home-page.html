@@ -135,7 +135,7 @@
                         <div class="left">
                             <!-- Start Like Button -->
                             <span class="heart">
-									<a href="#">
+									<a href="{% url 'like-photo' photo_id=photo.id %}">
 
                                     {% if photo.is_liked %}
 										<!-- if user has liked the photo -->
