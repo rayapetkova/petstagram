@@ -212,7 +212,7 @@
 
                     {% for tagged_pet in photo.tagged_pets.all %}
 
-                        <a href="{% url 'pet-details-page' username='random' pet_name=tagged_pet.name %}">
+                        <a href="{% url 'pet-details-page' username='random' pet_slug=tagged_pet.slug %}">
                             <p class="message">
                                 <b>{{ tagged_pet.name }}</b>
                             </p>
