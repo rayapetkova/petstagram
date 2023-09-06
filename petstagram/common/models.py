@@ -31,5 +31,3 @@ class Like(models.Model):
         null=False,
         blank=True
     )
-
-
