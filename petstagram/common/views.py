@@ -23,9 +23,14 @@ def home_page(request):
 
 
 def like_photo_func(request, photo_id):
-    new_like = Like.objects.create(
-        relation_to_photo_id=photo_id
-    )
+    photo_likes = Like.objects.filter(relation_to_photo_id=photo_id)
+
+    if photo_likes:
+        photo_likes.delete()
+    else:
+        new_like = Like.objects.create(
+            relation_to_photo_id=photo_id
+        )
 
     return redirect(request.META['HTTP_REFERER'] + f"#{photo_id}")
 
