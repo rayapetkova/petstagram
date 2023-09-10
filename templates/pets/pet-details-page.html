@@ -29,7 +29,7 @@
                     </div>
                     <div class="data">
                         <!-- Pet Total Photos -->
-                        <span>{{ curr_pet_photos.count }}</span>
+                        <span>{{ pet_photos_count }}</span>
                         <p>photos</p>
                     </div>
                 </div>
@@ -40,10 +40,10 @@
         <div class="pet-posts">
 
             <!-- IF Photos Start Pet Photos Post Section -->
-            {% if curr_pet_photos.count %}
-                {% for photo in curr_pet_photos %}
+            {% if curr_pet_photos %}
+                {% for c_photo in curr_pet_photos %}
 
-                    {% include 'base/partials/photo_post_details.html' with photo=photo %}
+                    {% include 'base/partials/photo_post_details.html' with photo=c_photo %}
 
                 {% endfor %}
 

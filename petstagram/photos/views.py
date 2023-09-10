@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-# Create your views here.
+
 def photo_add_page(request):
     return render(request, f"photos/photo-add-page.html")
 
