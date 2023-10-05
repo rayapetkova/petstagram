@@ -1,7 +1,6 @@
 from django.shortcuts import render
 
 from petstagram.pets.models import Pet
-from petstagram.photos.models import Photo
 
 
 def find_photo_likes_count(curr_photo):
