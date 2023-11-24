@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'petstagram.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'petstagram',
+        'NAME': 'petstagram_db',
         'USER': 'raya_postgres',
         'PASSWORD': 'raya5432',
         'HOST': 'localhost',
@@ -138,3 +138,5 @@ STATICFILES_DIRS = (
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'accounts.AuthUser'
